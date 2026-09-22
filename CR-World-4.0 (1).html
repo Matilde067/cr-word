@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CR. WORLD 4.0</title>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#fff;font-family:Arial,sans-serif;background:radial-gradient(circle at 15% 10%,#4b1764,transparent 30%),radial-gradient(circle at 85% 20%,#103e65,transparent 28%),#0d0a18;min-height:100vh}
+header{position:sticky;top:0;z-index:10;padding:14px 22px;background:#0e0a19ee;backdrop-filter:blur(12px);border-bottom:1px solid #342750;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:900}.logo span,h1 span{color:#ff4fc3}nav{display:flex;gap:8px;flex-wrap:wrap}button,a{font-weight:800}nav button,.hero button,.close,.tile button,.tile a{border:0;border-radius:13px;padding:10px 14px;background:#281c42;color:#fff;cursor:pointer;text-decoration:none;display:inline-block}nav button:hover,.card:hover,.tile button:hover,.tile a:hover{transform:translateY(-2px);border-color:#ff4fc3}
+main{max-width:1100px;margin:auto;padding:45px 20px 70px}.hero{text-align:center;padding:35px 0}.badge{display:inline-block;background:#27163e;border:1px solid #56377c;padding:8px 13px;border-radius:999px;font-size:13px}h1{font-size:clamp(46px,9vw,92px);margin:15px 0 8px;line-height:.95}.hero p{color:#bdb4d2;font-size:18px}.hero button{background:linear-gradient(90deg,#ff4fc3,#9d6cff);margin-top:10px}
+.free{margin:20px 0;padding:16px;border-radius:18px;background:#102d25;border:1px solid #286d58;color:#c8ffe9;text-align:center}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#22183a,#140f23);border:1px solid #342750;border-radius:22px;padding:22px;min-height:155px;cursor:pointer;transition:.2s}.icon{font-size:42px}.card h2{margin:12px 0 7px}.card p,.tile p,.note{color:#bdb4d2}
+footer{text-align:center;color:#8f86a5;padding:20px}
+.modal{display:none;position:fixed;inset:0;z-index:30;background:#05030acc;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.window{width:min(900px,100%);max-height:88vh;overflow:auto;background:#151025;border:1px solid #4a376b;border-radius:24px;box-shadow:0 25px 80px #000b}.windowhead{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #342750}.windowhead h2{margin:0}.close{font-size:20px}.content{padding:20px}.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{background:#21183a;border:1px solid #3a2a58;border-radius:18px;padding:18px}.tile h3{margin:5px 0 8px}.upload{border:2px dashed #513d73;padding:22px;border-radius:18px;text-align:center}video{width:100%;border-radius:14px;margin-top:12px;background:#000}#videosList{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:15px}.videoCard{background:#21183a;padding:12px;border-radius:16px}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.photo{aspect-ratio:1;border-radius:16px;background:linear-gradient(135deg,#ff4fc344,#4ed7ff44),#22183a;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #3d2c5b}
+@media(max-width:760px){.grid,.tiles{grid-template-columns:1fr}#videosList{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}nav{width:100%}nav button{flex:1}}
+</style>
+</head>
+<body>
+<header><div class="logo">CR<span>.</span> WORLD 🎮</div><nav>
+<button onclick="openM('games')">🎮 Juegos</button><button onclick="openM('movies')">🎬 Ver</button><button onclick="openM('music')">🎵 Música</button><button onclick="openM('videos')">📹 Mis vídeos</button><button onclick="openM('extras')">✨ Más</button>
+</nav></header>
+<main>
+<section class="hero"><div class="badge">✨ CR. WORLD 4.0 · TODO GRATIS</div><h1>CR. <span>WORLD</span></h1><p>Juega, descubre, escucha y explora sin suscripciones obligatorias.</p><button onclick="openM('games')">🚀 ENTRAR AL MUNDO</button></section>
+<div class="free">🟢 <b>100% GRATIS PARA VISITAR:</b> no hace falta crear una cuenta ni pagar una suscripción para usar las funciones propias de esta web.</div>
+<section class="grid">
+<div class="card" onclick="openM('games')"><div class="icon">🎮</div><h2>Juegos</h2><p>Juegos gratuitos que se abren desde la web.</p></div>
+<div class="card" onclick="openM('movies')"><div class="icon">🎬</div><h2>Vídeos y cine gratis</h2><p>Contenido gratuito y legal, sin copiar películas protegidas.</p></div>
+<div class="card" onclick="openM('music')"><div class="icon">🎵</div><h2>Música gratis</h2><p>Música propia y pistas disponibles legalmente.</p></div>
+<div class="card" onclick="openM('videos')"><div class="icon">📹</div><h2>Mis vídeos</h2><p>Previsualiza tus propios vídeos directamente en tu navegador.</p></div>
+<div class="card" onclick="openM('gallery')"><div class="icon">📸</div><h2>Galería</h2><p>Un espacio para tus fotos e imágenes permitidas.</p></div>
+<div class="card" onclick="openM('extras')"><div class="icon">✨</div><h2>Más</h2><p>Retos, ideas y sorpresas para CR. WORLD.</p></div>
+</section></main><footer>CR. WORLD · 4.0 · Hecho para explorar y divertirse ✨</footer>
+
+<div class="modal" id="games"><div class="window"><div class="windowhead"><h2>🎮 Juegos gratis</h2><button class="close" onclick="closeM('games')">×</button></div><div class="content"><div class="tiles">
+<div class="tile"><h3>⚽ Fútbol</h3><p>Juegos gratuitos disponibles en Poki.</p><a href="https://poki.com/es/futbol" target="_blank" rel="noopener">Jugar</a></div>
+<div class="tile"><h3>👑 Princesas</h3><p>Juegos gratuitos de princesas.</p><a href="https://poki.com/es/princesas" target="_blank" rel="noopener">Jugar</a></div>
+<div class="tile"><h3>🕹️ Más juegos</h3><p>Explora juegos gratuitos.</p><a href="https://poki.com/es" target="_blank" rel="noopener">Explorar</a></div>
+</div><p class="note">Los juegos se abren en su plataforma original. CR. WORLD no descarga ni copia sus contenidos.</p></div></div></div>
+
+<div class="modal" id="movies"><div class="window"><div class="windowhead"><h2>🎬 Vídeos y cine gratis</h2><button class="close" onclick="closeM('movies')">×</button></div><div class="content"><div class="tiles">
+<div class="tile"><h3>▶️ Tus vídeos</h3><p>Añade vídeos propios o con permiso para publicarlos.</p><button onclick="openM('videos')">Mis vídeos</button></div>
+<div class="tile"><h3>📺 YouTube</h3><p>Explora contenido gratuito de canales oficiales.</p><a href="https://www.youtube.com/" target="_blank" rel="noopener">Explorar</a></div>
+<div class="tile"><h3>🎞️ Películas libres</h3><p>Zona para películas de dominio público o con licencia gratuita.</p><button onclick="alert('Aquí añadiremos películas que puedan verse legalmente gratis.')">Explorar</button></div>
+</div><p class="note">No incluimos películas de Disney u otros catálogos protegidos sin autorización.</p></div></div></div>
+
+<div class="modal" id="music"><div class="window"><div class="windowhead"><h2>🎵 Música gratis</h2><button class="close" onclick="closeM('music')">×</button></div><div class="content"><div class="tiles">
+<div class="tile"><h3>🎧 Música propia</h3><p>Añade pistas tuyas o que tengas permiso para publicar.</p><button onclick="document.getElementById('audioFile').click()">Añadir pista</button></div>
+<div class="tile"><h3>🌐 Música gratuita</h3><p>Espacio para música con licencia adecuada.</p><button onclick="alert('Aquí añadiremos música con licencia adecuada.')">Explorar</button></div>
+<div class="tile"><h3>🎶 Tu playlist</h3><p>Reproduce las pistas permitidas que añadas.</p></div>
+</div><input id="audioFile" type="file" accept="audio/*" multiple hidden onchange="loadAudio(this.files)"><div id="audioList"></div><p class="note">No se incorporan canciones comerciales protegidas sin permiso.</p></div></div></div>
+
+<div class="modal" id="videos"><div class="window"><div class="windowhead"><h2>📹 Mis vídeos</h2><button class="close" onclick="closeM('videos')">×</button></div><div class="content"><div class="upload"><h3>🎥 Añade tus vídeos</h3><p>Selecciona vídeos guardados en tu dispositivo para verlos aquí.</p><input id="videoFile" type="file" accept="video/*" multiple onchange="loadVideos(this.files)"></div><div id="videosList"></div><p class="note">Los archivos se previsualizan en tu navegador; esta versión no los sube a Internet.</p></div></div></div>
+
+<div class="modal" id="gallery"><div class="window"><div class="windowhead"><h2>📸 Galería</h2><button class="close" onclick="closeM('gallery')">×</button></div><div class="content"><div class="gallery"><div class="photo">🌈</div><div class="photo">✨</div><div class="photo">🎮</div><div class="photo">🌸</div><div class="photo">📷</div><div class="photo">⭐</div></div><p class="note">Puedes sustituir estos espacios por tus propias fotos o imágenes que tengas permiso para publicar.</p></div></div></div>
+
+<div class="modal" id="extras"><div class="window"><div class="windowhead"><h2>✨ Más CR. WORLD</h2><button class="close" onclick="closeM('extras')">×</button></div><div class="content"><div class="tiles">
+<div class="tile"><h3>🏆 Retos</h3><p>Desafíos divertidos.</p><button onclick="newChallenge()">Nuevo reto</button><p id="challenge"></p></div>
+<div class="tile"><h3>💡 Ideas</h3><p>Ideas para vídeos, fotos y juegos.</p><button onclick="alert('🎨 Vídeo creativo · 📸 Galería · 🎮 Nuevo reto')">Ver ideas</button></div>
+<div class="tile"><h3>🛡️ Seguridad</h3><p>No publiques dirección, colegio, teléfono, ubicación exacta ni datos privados.</p></div>
+</div></div></div></div>
+
+<script>
+function openM(id){document.getElementById(id).classList.add('open')}
+function closeM(id){document.getElementById(id).classList.remove('open')}
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'))});
+function loadVideos(files){const box=document.getElementById('videosList');box.innerHTML='';[...files].forEach(file=>{const url=URL.createObjectURL(file),d=document.createElement('div');d.className='videoCard';d.innerHTML='<b>'+file.name.replace(/</g,'&lt;')+'</b>';const v=document.createElement('video');v.controls=true;v.src=url;d.appendChild(v);box.appendChild(d)})}
+function loadAudio(files){const box=document.getElementById('audioList');box.innerHTML='';[...files].forEach(file=>{const url=URL.createObjectURL(file),d=document.createElement('div');d.className='tile';d.style.marginTop='12px';d.innerHTML='<b>'+file.name.replace(/</g,'&lt;')+'</b>';const a=document.createElement('audio');a.controls=true;a.src=url;a.style.width='100%';d.appendChild(a);box.appendChild(d)})}
+const challenges=['Haz una foto creativa con tres objetos de casa.','Inventa un nombre para un videojuego.','Crea un dibujo usando solo tres colores.','Haz un mini vídeo de 30 segundos sobre algo que te guste.','Inventa un logo para CR. WORLD.'];
+function newChallenge(){document.getElementById('challenge').textContent='🎯 '+challenges[Math.floor(Math.random()*challenges.length)]}
+</script>
+</body></html>
