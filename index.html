@@ -5,13 +5,29 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CR. WORLD 4.0</title>
 <style>
-*{box-sizing:border-box}body{margin:0;color:#fff;font-family:Arial,sans-serif;background:radial-gradient(circle at 15% 10%,#4b1764,transparent 30%),radial-gradient(circle at 85% 20%,#103e65,transparent 28%),#0d0a18;min-height:100vh}
-header{position:sticky;top:0;z-index:10;padding:14px 22px;background:#0e0a19ee;backdrop-filter:blur(12px);border-bottom:1px solid #342750;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.logo{font-size:25px;font-weight:900}.logo span,h1 span{color:#ff4fc3}nav{display:flex;gap:8px;flex-wrap:wrap}button,a{font-weight:800}nav button,.hero button,.close,.tile button,.tile a{border:0;border-radius:13px;padding:10px 14px;background:#281c42;color:#fff;cursor:pointer;text-decoration:none;display:inline-block}nav button:hover,.card:hover,.tile button:hover,.tile a:hover{transform:translateY(-2px);border-color:#ff4fc3}
-main{max-width:1100px;margin:auto;padding:45px 20px 70px}.hero{text-align:center;padding:35px 0}.badge{display:inline-block;background:#27163e;border:1px solid #56377c;padding:8px 13px;border-radius:999px;font-size:13px}h1{font-size:clamp(46px,9vw,92px);margin:15px 0 8px;line-height:.95}.hero p{color:#bdb4d2;font-size:18px}.hero button{background:linear-gradient(90deg,#ff4fc3,#9d6cff);margin-top:10px}
-.free{margin:20px 0;padding:16px;border-radius:18px;background:#102d25;border:1px solid #286d58;color:#c8ffe9;text-align:center}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#22183a,#140f23);border:1px solid #342750;border-radius:22px;padding:22px;min-height:155px;cursor:pointer;transition:.2s}.icon{font-size:42px}.card h2{margin:12px 0 7px}.card p,.tile p,.note{color:#bdb4d2}
-footer{text-align:center;color:#8f86a5;padding:20px}
-.modal{display:none;position:fixed;inset:0;z-index:30;background:#05030acc;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.window{width:min(900px,100%);max-height:88vh;overflow:auto;background:#151025;border:1px solid #4a376b;border-radius:24px;box-shadow:0 25px 80px #000b}.windowhead{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #342750}.windowhead h2{margin:0}.close{font-size:20px}.content{padding:20px}.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{background:#21183a;border:1px solid #3a2a58;border-radius:18px;padding:18px}.tile h3{margin:5px 0 8px}.upload{border:2px dashed #513d73;padding:22px;border-radius:18px;text-align:center}video{width:100%;border-radius:14px;margin-top:12px;background:#000}#videosList{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:15px}.videoCard{background:#21183a;padding:12px;border-radius:16px}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.photo{aspect-ratio:1;border-radius:16px;background:linear-gradient(135deg,#ff4fc344,#4ed7ff44),#22183a;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #3d2c5b}
+*{box-sizing:border-box}
+body{margin:0;color:#fff;font-family:Arial,sans-serif;background:radial-gradient(circle at 15% 10%,#b3002d,transparent 32%),radial-gradient(circle at 85% 20%,#5a0017,transparent 30%),#2b0008;min-height:100vh}
+header{position:sticky;top:0;z-index:10;padding:14px 22px;background:#4a0010ee;backdrop-filter:blur(12px);border-bottom:2px solid #d4af37;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:900}.logo span,h1 span{color:#f4d06f}
+nav{display:flex;gap:8px;flex-wrap:wrap}button,a{font-weight:800}
+nav button,.hero button,.close,.tile button,.tile a{border:1px solid #d4af37;border-radius:13px;padding:10px 14px;background:#7a0019;color:#fff;cursor:pointer;text-decoration:none;display:inline-block}
+nav button:hover,.card:hover,.tile button:hover,.tile a:hover{transform:translateY(-2px);border-color:#ffe08a;box-shadow:0 8px 25px #0006}
+main{max-width:1100px;margin:auto;padding:45px 20px 70px}.hero{text-align:center;padding:35px 0}
+.badge{display:inline-block;background:#5b0015;border:1px solid #d4af37;padding:8px 13px;border-radius:999px;font-size:13px;color:#f8df8a}
+h1{font-size:clamp(46px,9vw,92px);margin:15px 0 8px;line-height:.95}.hero p{color:#f4dfb0;font-size:18px}
+.hero button{background:linear-gradient(90deg,#8f001f,#d4af37);margin-top:10px}
+.free{margin:20px 0;padding:16px;border-radius:18px;background:#5b0015;border:1px solid #d4af37;color:#ffe8a3;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(145deg,#7a0019,#3b000b);border:1px solid #d4af37;border-radius:22px;padding:22px;min-height:155px;cursor:pointer;transition:.2s;box-shadow:0 8px 25px #0003}
+.icon{font-size:42px}.card h2{margin:12px 0 7px}.card p,.tile p,.note{color:#f4dfb0}
+footer{text-align:center;color:#e6c96a;padding:20px}
+.modal{display:none;position:fixed;inset:0;z-index:30;background:#170006cc;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}
+.window{width:min(900px,100%);max-height:88vh;overflow:auto;background:#3b000b;border:2px solid #d4af37;border-radius:24px;box-shadow:0 25px 80px #000b}
+.windowhead{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #d4af37}.windowhead h2{margin:0;color:#ffe08a}.close{font-size:20px}
+.content{padding:20px}.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{background:#5b0015;border:1px solid #c9a227;border-radius:18px;padding:18px}.tile h3{margin:5px 0 8px;color:#ffe08a}
+.upload{border:2px dashed #d4af37;padding:22px;border-radius:18px;text-align:center}video{width:100%;border-radius:14px;margin-top:12px;background:#000}
+#videosList{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:15px}.videoCard{background:#5b0015;padding:12px;border-radius:16px;border:1px solid #a67c00}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.photo{aspect-ratio:1;border-radius:16px;background:linear-gradient(135deg,#d4af3744,#8f001f66),#5b0015;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #d4af37}
 @media(max-width:760px){.grid,.tiles{grid-template-columns:1fr}#videosList{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}nav{width:100%}nav button{flex:1}}
 </style>
 </head>
